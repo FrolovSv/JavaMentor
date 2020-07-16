@@ -1,2 +1,2 @@
-cd d:\JavaProgect\JavaMentor\dist\
+cd dist\
 java -jar JavaMentorTest.jar
