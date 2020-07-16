@@ -41,7 +41,7 @@ public class Arifmetic {
             default:
                 // выводим сообщение об ошибке
                 throw new IllegalArgumentException("Арифметическая операция: " +operation + " - не поддерживается. Доступные операции: `+`,`-`,`*`,`/`");
-                //System.out.println("Арифметическая операци не распознана");
+                //System.out.println("Арифметическая операция: " +operation + " - не поддерживается. Доступные операции: `+`,`-`,`*`,`/`");
                 //завершаем выполнение программы
                 //System.exit(0);
                 //return "";
@@ -82,7 +82,8 @@ public class Arifmetic {
                     if (result.contains(".")) {
                         //возращаем результат в делени по модулю и виде арабаских цифр
                         return arabicToRoman(dig1 % dig2);
-                    }
+                    } else 
+                        return arabicToRoman(Integer.valueOf(result));
                 }
             //Если введенные числа не соответсвуют указанному диапазону
             } else {
@@ -141,7 +142,7 @@ public class Arifmetic {
     }
 
     //метод приеобразования арабских цифр в римские
-    private String arabicToRoman(int number) {
+    public String arabicToRoman(int number) {
         //устанавливаем ограничение, римские фифры не могут быть преобразованы из арабских величиной больше 4000 и меньше 0
         if ((number <= 0) || (number > 4000)) {
             // Выводим сообщение об ошибке

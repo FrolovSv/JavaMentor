@@ -6,10 +6,10 @@
 package com;
 
 import org.junit.AfterClass;
-import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.is;
 
 /**
  *
@@ -46,10 +46,22 @@ public class ArifmeticTest {
         result = instance.getResult();
         assertEquals("-8", result);
         
+        instance = new Arifmetic("2 * 9");
+        result = instance.getResult();
+        assertEquals("18", result);
+        
+        instance = new Arifmetic("2 / 9");
+        result = instance.getResult();
+        assertEquals("0.2222222222222222", result);
+        
         instance = new Arifmetic("I + X");
         result = instance.getResult();
         assertEquals("XI", result);
         
+        instance = new Arifmetic("X - VI");
+        result = instance.getResult();
+        assertEquals("IV", result);
+                
         instance = new Arifmetic("X * X");
         result = instance.getResult();
         assertEquals("C", result);
@@ -64,8 +76,8 @@ public class ArifmeticTest {
         
         instance = new Arifmetic("VI / IV");
         result = instance.getResult();
-        assertEquals("1.5", result);
-
+        assertEquals(new Arifmetic("").arabicToRoman(6%4), result);
+               
     }
     
 }
